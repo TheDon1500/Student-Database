@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Insert Info</title>
+</head>
+<body>
+	Name <input id="namebox" type="text"></input><br><br>
+	MatricNo <input id="matric" type="number"></input><br><br>
+	CSC 412 Score <input id="score1" type="number"></input><br><br><br><br>
+	CSC 333 Score <input id="score2" type="number"></input><br><br><br><br>
+	CSC 451 Score <input id="score3" type="number"></input><br><br><br><br>
+	CSC 334 Score <input id="score4" type="number"></input><br><br><br><br>
+	CSC 472 Score <input id="score5" type="number"></input><br><br><br><br>
+
+	<button id="insert"> Insert Info</button>
+  <button id="update"> Update</button>
+   <button id="delete"> Delete</button>
+
+
+	<script src="https://www.gstatic.com/firebasejs/8.6.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.0/firebase-analytics.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.0/firebase-database.js"></script> 
+
+<script id="SecondScript">
+
+	var firebaseConfig = {
+    apiKey: "AIzaSyCgOoFZK2PyB0yE1Y7jP7LbM9jUeO5cXSM",
+    authDomain: "studentdatabase-46040.firebaseapp.com",
+    databaseURL: "https://studentdatabase-46040-default-rtdb.firebaseio.com",
+    projectId: "studentdatabase-46040",
+    storageBucket: "studentdatabase-46040.appspot.com",
+    messagingSenderId: "490183056797",
+    appId: "1:490183056797:web:975ba5ff455de429ad2374",
+    measurementId: "G-YNSZCJRJQ5"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+
+
+
+</script>
+<script>
+  var namev, matricv;
+  function Ready(){
+    namev = document.getElementById('namebox').value;
+    matricv = document.getElementById('matric').value;
+    score1v = document.getElementById('score1').value;
+    score2v = document.getElementById('score2').value;
+    score3v = document.getElementById('score3').value;
+    score4v = document.getElementById('score4').value;
+    score5v = document.getElementById('score5').value;
+
+  }
+
+  //insert
+  document.getElementById('insert').onclick = function(){
+    Ready();
+    firebase.database().ref('Students/'+matricv).set({
+      Name: namev,
+      CSC412: score1v,
+      CSC333: score2v,
+      CSC451: score3v,
+      CSC334: score4v,
+      CSC472: score5v,
+      MatricNo: matricv
+      
+    });
+  }
+
+//update
+ document.getElementById('update').onclick = function(){
+    Ready();
+    firebase.database().ref('Students/'+matricv).update({
+      Name: namev,
+      CSC412: score1v,
+      CSC333: score2v,
+      CSC451: score3v,
+      CSC334: score4v,
+      CSC472: score5v,
+      MatricNo: matricv
+      
+    });
+  }
+
+  //delete
+ document.getElementById('delete').onclick = function(){
+    Ready();
+    firebase.database().ref('Students/'+matricv).remove();
+  }
+</script>
+
+</body>
+</html>

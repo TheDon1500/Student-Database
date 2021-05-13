@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Student Database</title>
+</head>
+<body>
+	<button id = "insertpage" onclick="window.location.href='insert page.html';"> Insert/Edit Info</button><br><br>
+	<button id="displaypage" onclick="window.location.href='display.html';">Display Info</button><br><br>
+	
+
+<script src="https://www.gstatic.com/firebasejs/8.6.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.0/firebase-analytics.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.0/firebase-database.js"></script> 
+
+<script id="MainScript">
+
+	var firebaseConfig = {
+    apiKey: "AIzaSyCgOoFZK2PyB0yE1Y7jP7LbM9jUeO5cXSM",
+    authDomain: "studentdatabase-46040.firebaseapp.com",
+    databaseURL: "https://studentdatabase-46040-default-rtdb.firebaseio.com",
+    projectId: "studentdatabase-46040",
+    storageBucket: "studentdatabase-46040.appspot.com",
+    messagingSenderId: "490183056797",
+    appId: "1:490183056797:web:975ba5ff455de429ad2374",
+    measurementId: "G-YNSZCJRJQ5"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+
+ 
+</script>
+
+<script src="index.js"></script>
+
+</body>   
+</html>
